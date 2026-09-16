@@ -446,12 +446,6 @@ h1,h2,h3{
     object-fit: cover;
     display: block;
 }
-   .memory-card {
-    position: relative;
-    height: 230px;
-    overflow: hidden;
-    border-radius: 20px;
-}
 
 .memory-caption {
     position: absolute;
@@ -469,6 +463,23 @@ h1,h2,h3{
     );
 }
 
+/* TABLET */
+@media (max-width: 900px) {
+    .memory-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .memory-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .memory-card {
+        height: 200px;
+    }
+}
 
 /* TABLET */
 
