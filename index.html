@@ -1,997 +1,1015 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>For My Bubu ❤️</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-/* =========================================================
-   BASIC RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "DM Sans", sans-serif;
-    color: #4a2940;
-    min-height: 100vh;
-    overflow-x: hidden;
-
-    background:
-        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.75), transparent 25%),
-        radial-gradient(circle at 90% 10%, rgba(255,255,255,0.65), transparent 25%),
-        linear-gradient(135deg, #ffd6e7, #ffe7c7, #e8d8ff, #d8f4ff);
-
-    background-size: 200% 200%;
-    animation: backgroundMove 12s ease infinite;
-}
-
-button {
-    font-family: inherit;
-}
-
-@keyframes backgroundMove {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-/* =========================================================
-   FLOATING HEARTS
-========================================================= */
-
-.heart {
-    position: fixed;
-    pointer-events: none;
-    z-index: 0;
-    animation: floatHeart linear infinite;
-    opacity: 0.45;
-}
-
-@keyframes floatHeart {
-
-    0% {
-        transform: translateY(110vh) rotate(0deg);
-        opacity: 0;
-    }
-
-    15% {
-        opacity: 0.5;
-    }
-
-    85% {
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: translateY(-15vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   GENERAL
-========================================================= */
-
-.page {
-    position: relative;
-    z-index: 1;
-    min-height: 100vh;
-}
-
-.hidden {
-    display: none !important;
-}
-
-
-/* =========================================================
-   LANDING PAGE
-========================================================= */
-
-#landing {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 20px;
-    text-align: center;
-}
-
-.landing-content {
-    width: 100%;
-    max-width: 850px;
-}
-
-.small-title {
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #9d4f78;
-    margin-bottom: 15px;
-}
-
-.main-title {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(55px, 10vw, 110px);
-    line-height: 0.95;
-    color: #8d315f;
-    margin-bottom: 20px;
-    text-shadow: 0 5px 20px rgba(141,49,95,0.15);
-}
-
-.main-subtitle {
-    font-size: clamp(17px, 3vw, 23px);
-    color: #633d55;
-    max-width: 650px;
-    margin: 0 auto 35px;
-    line-height: 1.6;
-}
-
-.landing-card {
-    background: rgba(255,255,255,0.68);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(255,255,255,0.8);
-    border-radius: 30px;
-
-    padding: 40px 30px;
-
-    box-shadow:
-        0 25px 70px rgba(100,50,90,0.15),
-        inset 0 1px 0 rgba(255,255,255,0.8);
-
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-.question {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(25px, 5vw, 38px);
-    color: #72284f;
-    margin-bottom: 28px;
-}
-
-.button-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-.main-button {
-    border: none;
-    border-radius: 999px;
-    padding: 15px 32px;
-    font-size: 17px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s ease;
-    box-shadow: 0 10px 25px rgba(100,40,80,0.15);
-}
-
-.yes-button {
-    background: linear-gradient(135deg, #ff6fa8, #d94d8a);
-    color: white;
-}
-
-.yes-button:hover {
-    transform: translateY(-4px) scale(1.04);
-    box-shadow: 0 15px 30px rgba(217,77,138,0.3);
-}
-
-.no-button {
-    background: white;
-    color: #a04873;
-}
-
-.no-button:hover {
-    transform: translateY(-3px);
-}
-
-
-/* =========================================================
-   PRESENT PAGE
-========================================================= */
-
-#present {
-    min-height: 100vh;
-    padding: 70px 20px 60px;
-}
-
-.page-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 45px;
-}
-
-.page-header h1 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(42px, 7vw, 70px);
-    color: #812b58;
-    margin-bottom: 12px;
-}
-
-.page-header p {
-    font-size: 18px;
-    color: #68465b;
-    line-height: 1.6;
-}
-
-.present-grid {
-    max-width: 1000px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.present-card {
-    border: none;
-    cursor: pointer;
-
-    padding: 28px 20px;
-    min-height: 190px;
-
-    border-radius: 25px;
-
-    background: rgba(255,255,255,0.72);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
-    border: 1px solid rgba(255,255,255,0.8);
-
-    box-shadow: 0 15px 40px rgba(100,50,90,0.12);
-
-    transition: 0.35s ease;
-}
-
-.present-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(100,50,90,0.18);
-}
-
-.present-icon {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
-
-.present-card h3 {
-    color: #7b2e58;
-    font-family: "Playfair Display", serif;
-    font-size: 24px;
-    margin-bottom: 8px;
-}
-
-.present-card p {
-    color: #765467;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-
-/* =========================================================
-   MEMORY LANE
-========================================================= */
-
-.memory-section {
-    max-width: 1150px;
-    margin: 65px auto 0;
-}
-
-.memory-heading {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.memory-heading h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(35px, 6vw, 55px);
-    color: #812b58;
-}
-
-.memory-heading p {
-    margin-top: 8px;
-    color: #765467;
-}
-
-
-/* THE GRID */
-
-.memory-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-}
-
-
-/* EVERY PHOTO BOX HAS THE SAME SIZE */
-
-.memory-card {
-    position: relative;
-
-    width: 100%;
-    height: 230px;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    background: white;
-
-    box-shadow:
-        0 10px 30px rgba(100,50,90,0.14);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.memory-card:hover {
-    transform: translateY(-6px) scale(1.015);
-
-    box-shadow:
-        0 18px 40px rgba(100,50,90,0.22);
-}
-
-
-/* ALL 22 IMAGES USE THIS */
-
-.memory-card img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    object-position: center;
-
-    transition: transform 0.5s ease;
-}
-
-.memory-card:hover img {
-    transform: scale(1.05);
-}
-
-
-/* CAPTION */
-
-.memory-caption {
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    padding: 45px 12px 13px;
-
-    color: white;
-
-    text-align: center;
-
-    font-size: 13px;
-    line-height: 1.35;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(40,15,30,0.85),
-            rgba(40,15,30,0)
-        );
-}
-
-
-/* =========================================================
-   MODALS
-========================================================= */
-
-.modal {
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 100;
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-
-    background: rgba(60,20,50,0.55);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.modal.show {
-    display: flex;
-}
-
-.modal-box {
-    position: relative;
-
-    width: 100%;
-    max-width: 700px;
-
-    max-height: 90vh;
-
-    overflow-y: auto;
-
-    padding: 40px 30px;
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.96),
-            rgba(255,244,249,0.96)
-        );
-
-    box-shadow:
-        0 30px 100px rgba(50,20,50,0.3);
-
-    text-align: center;
-
-    animation: modalAppear 0.35s ease;
-}
-
-@keyframes modalAppear {
-    from {
-        opacity: 0;
-        transform: translateY(25px) scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.close-button {
-    position: absolute;
-
-    top: 15px;
-    right: 18px;
-
-    width: 40px;
-    height: 40px;
-
-    border: none;
-    border-radius: 50%;
-
-    background: #ffe2ee;
-
-    color: #8b315f;
-
-    font-size: 22px;
-
-    cursor: pointer;
-}
-
-.modal-box h2 {
-    font-family: "Playfair Display", serif;
-
-    font-size: clamp(35px, 6vw, 52px);
-
-    color: #812b58;
-
-    margin-bottom: 12px;
-}
-
-.modal-description {
-    color: #765467;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-
-/* =========================================================
-   PASSWORD SURPRISE
-========================================================= */
-
-.password-area {
-    max-width: 400px;
-    margin: 25px auto;
-}
-
-.password-input {
-    width: 100%;
-
-    padding: 15px 18px;
-
-    border: 2px solid #f2c4d7;
-
-    border-radius: 15px;
-
-    outline: none;
-
-    font-size: 16px;
-
-    margin-bottom: 12px;
-
-    text-align: center;
-}
-
-.password-input:focus {
-    border-color: #d85a91;
-}
-
-.unlock {
-    width: 100%;
-
-    border: none;
-
-    border-radius: 999px;
-
-    padding: 14px 25px;
-
-    background: linear-gradient(135deg,#ff6fa8,#d94d8a);
-
-    color: white;
-
-    font-weight: 700;
-
-    font-size: 16px;
-
-    cursor: pointer;
-}
-
-.hint-button {
-    border: none;
-    background: transparent;
-
-    color: #a54a75;
-
-    margin-top: 14px;
-
-    cursor: pointer;
-
-    text-decoration: underline;
-}
-
-.wrong-password {
-    display: none;
-
-    color: #d64c72;
-
-    font-size: 14px;
-
-    margin-top: 10px;
-}
-
-.password-hint {
-    display: none;
-
-    margin-top: 12px;
-
-    padding: 12px;
-
-    border-radius: 12px;
-
-    background: #fff0f6;
-
-    color: #7b3b5c;
-
-    font-size: 14px;
-}
-
-.password-hint.show {
-    display: block;
-}
-
-.lock-icon {
-    font-size: 55px;
-
-    margin-bottom: 15px;
-}
-
-
-/* =========================================================
-   LOVE LETTER
-========================================================= */
-
-.letter {
-    text-align: left;
-
-    padding: 25px;
-
-    border-radius: 22px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff4f8,
-            #fffaf0
-        );
-
-    border: 1px solid #f7d8e5;
-
-    line-height: 1.85;
-
-    color: #604052;
-
-    font-size: 16px;
-}
-
-.letter p {
-    margin-bottom: 18px;
-}
-
-.letter .opening {
-    font-family: "Playfair Display", serif;
-
-    font-size: 22px;
-
-    color: #8a315d;
-}
-
-
-/* =========================================================
-   CHOICES
-========================================================= */
-
-.choice-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2,1fr);
-
-    gap: 15px;
-
-    margin-top: 25px;
-}
-
-.choice-button {
-    border: none;
-
-    padding: 20px 15px;
-
-    border-radius: 18px;
-
-    background: linear-gradient(
-        135deg,
-        #fff,
-        #fff1f6
-    );
-
-    border: 1px solid #f3d2e0;
-
-    color: #743253;
-
-    font-size: 16px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: 0.3s ease;
-}
-
-.choice-button:hover {
-    transform: translateY(-4px);
-
-    background: #ffe5ef;
-
-    box-shadow: 0 10px 25px rgba(150,60,100,0.12);
-}
-
-.choice-response {
-    display: none;
-
-    margin-top: 25px;
-
-    padding: 22px;
-
-    border-radius: 20px;
-
-    background: linear-gradient(
-        135deg,
-        #ffe3ef,
-        #fff0d5
-    );
-
-    color: #743253;
-
-    font-weight: 600;
-
-    line-height: 1.6;
-}
-
-.choice-response.show {
-    display: block;
-}
-
-.back-menu {
-    margin-top: 18px;
-
-    border: none;
-
-    border-radius: 999px;
-
-    padding: 12px 22px;
-
-    background: #812b58;
-
-    color: white;
-
-    cursor: pointer;
-
-    font-weight: 700;
-}
-
-
-/* =========================================================
-   FINAL PAGE
-========================================================= */
-
-#final {
-    min-height: 100vh;
-
-    padding: 70px 20px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-}
-
-.final-box {
-    max-width: 850px;
-
-    width: 100%;
-
-    padding: 55px 30px;
-
-    border-radius: 35px;
-
-    background: rgba(255,255,255,0.75);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(255,255,255,0.85);
-
-    box-shadow: 0 30px 90px rgba(100,50,90,0.18);
-}
-
-.final-box h1 {
-    font-family: "Playfair Display", serif;
-
-    font-size: clamp(45px, 8vw, 80px);
-
-    color: #812b58;
-
-    margin-bottom: 18px;
-}
-
-.final-box h2 {
-    font-family: "Playfair Display", serif;
-
-    color: #a23d6c;
-
-    font-size: clamp(25px, 5vw, 38px);
-
-    margin: 25px 0;
-}
-
-.final-message {
-    max-width: 650px;
-
-    margin: auto;
-
-    color: #654457;
-
-    line-height: 1.8;
-
-    font-size: 17px;
-}
-
-.final-choices {
-    margin: 30px auto;
-
-    max-width: 600px;
-
-    padding: 22px;
-
-    border-radius: 22px;
-
-    background: rgba(255,240,247,0.8);
-
-    text-align: left;
-}
-
-.final-choices p {
-    margin-bottom: 10px;
-
-    color: #713253;
-}
-
-.date-ready {
-    margin-top: 30px;
-
-    font-family: "Playfair Display", serif;
-
-    font-size: clamp(28px,5vw,45px);
-
-    color: #d34f88;
-}
-
-
-/* =========================================================
-   CONFETTI
-========================================================= */
-
-.confetti {
-    position: fixed;
-
-    width: 9px;
-    height: 14px;
-
-    top: -20px;
-
-    z-index: 999;
-
-    pointer-events: none;
-
-    animation: confettiFall 3s linear forwards;
-}
-
-@keyframes confettiFall {
-
-    to {
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .present-grid {
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .memory-grid {
-        grid-template-columns: repeat(3,1fr);
-    }
-}
-
-
-@media (max-width: 650px) {
-
-    .present-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .memory-grid {
-        grid-template-columns: repeat(2,1fr);
-        gap: 12px;
-    }
-
-    .memory-card {
-        height: 190px;
-    }
-
-    .memory-caption {
-        font-size: 11px;
-        padding: 35px 8px 10px;
-    }
-
-    .choice-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .landing-card {
-        padding: 30px 20px;
-    }
-
-    .modal-box {
-        padding: 35px 18px;
-    }
-
-    .letter {
-        padding: 18px;
-        font-size: 15px;
-    }
-}
-
-
-@media (max-width: 400px) {
-
-    .memory-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .memory-card {
-        height: 250px;
-    }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Bubu ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            min-height: 100vh;
+            color: #3b2630;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(circle at 10% 20%, rgba(255, 180, 210, 0.7), transparent 30%),
+                radial-gradient(circle at 90% 10%, rgba(255, 220, 150, 0.7), transparent 30%),
+                radial-gradient(circle at 50% 90%, rgba(190, 220, 255, 0.6), transparent 35%),
+                linear-gradient(135deg, #fff1f7, #fffaf0, #f4f1ff);
+
+            background-size: 200% 200%;
+            animation: backgroundMove 12s ease infinite;
+        }
+
+        @keyframes backgroundMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* =========================================
+           FLOATING HEARTS
+        ========================================= */
+
+        .heart {
+            position: fixed;
+            bottom: -50px;
+            font-size: 20px;
+            opacity: 0.55;
+            pointer-events: none;
+            animation: floatHeart linear forwards;
+            z-index: 1;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* =========================================
+           PAGE
+        ========================================= */
+
+        .page {
+            min-height: 100vh;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =========================================
+           LANDING PAGE
+        ========================================= */
+
+        .landing {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+        }
+
+        .landing-card {
+            width: min(700px, 100%);
+            text-align: center;
+            padding: 60px 35px;
+            border-radius: 35px;
+
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 25px 80px rgba(130, 80, 110, 0.15);
+
+            border: 1px solid rgba(255, 255, 255, 0.8);
+
+            animation: cardAppear 1s ease;
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .small-line {
+            font-size: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #b45d7c;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+
+        .landing-card h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(42px, 8vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+            color: #54283d;
+        }
+
+        .landing-card h1 span {
+            color: #e44d7a;
+        }
+
+        .landing-card p {
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 560px;
+            margin: 0 auto 30px;
+            color: #654b56;
+        }
+
+        .question {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #4b2737;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            min-height: 70px;
+        }
+
+        .yes-button,
+        .no-button {
+            padding: 15px 35px;
+            border-radius: 999px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.25s ease;
+        }
+
+        .yes-button {
+            color: white;
+            background: linear-gradient(135deg, #e94f83, #d72f68);
+            box-shadow: 0 10px 25px rgba(215, 47, 104, 0.3);
+        }
+
+        .yes-button:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 15px 35px rgba(215, 47, 104, 0.4);
+        }
+
+        .no-button {
+            color: #744c5d;
+            background: white;
+            box-shadow: 0 8px 20px rgba(100, 60, 80, 0.12);
+            position: relative;
+        }
+
+        /* =========================================
+           PRESENT PAGE
+        ========================================= */
+
+        .present-page {
+            padding: 55px 20px 80px;
+        }
+
+        .present-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 45px;
+        }
+
+        .present-header .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #c25b7c;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .present-header h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 7vw, 65px);
+            color: #52293d;
+            margin-bottom: 15px;
+        }
+
+        .present-header p {
+            font-size: 17px;
+            color: #725866;
+            line-height: 1.7;
+        }
+
+        /* =========================================
+           OPTION CARDS
+        ========================================= */
+
+        .options-grid {
+            width: min(1050px, 100%);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .option-card {
+            padding: 30px 20px;
+            border-radius: 25px;
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            box-shadow: 0 15px 40px rgba(100, 60, 90, 0.12);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+
+        .option-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(100, 60, 90, 0.18);
+        }
+
+        .option-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .option-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: #52293d;
+        }
+
+        .option-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #745b66;
+            margin-bottom: 20px;
+        }
+
+        .option-button {
+            padding: 12px 22px;
+            border-radius: 999px;
+            background: #fff;
+            color: #a63d63;
+            font-weight: 700;
+            box-shadow: 0 6px 18px rgba(100, 50, 80, 0.12);
+            transition: all 0.25s ease;
+        }
+
+        .option-button:hover {
+            background: #a63d63;
+            color: white;
+            transform: scale(1.04);
+        }
+
+        /* =========================================
+           MEMORY LANE
+        ========================================= */
+
+        .memory-section {
+            width: min(1100px, 100%);
+            margin: 80px auto 0;
+        }
+
+        .memory-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .memory-heading .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            color: #c25b7c;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .memory-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(36px, 6vw, 55px);
+            color: #52293d;
+            margin-bottom: 10px;
+        }
+
+        .memory-heading p {
+            color: #755b66;
+            line-height: 1.6;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 10px;
+        }
+
+        .memory-card {
+            position: relative;
+            height: 230px;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #fff;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.12);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.18);
+        }
+
+        .memory-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .memory-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .memory-caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 35px 12px 12px;
+
+            color: white;
+            text-align: center;
+
+            font-size: 13px;
+            line-height: 1.3;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0, 0, 0, 0.78)
+                );
+        }
+
+        /* =========================================
+           CONTINUE BUTTON
+        ========================================= */
+
+        .continue-area {
+            text-align: center;
+            margin: 55px auto 20px;
+        }
+
+        .continue-button {
+            padding: 16px 35px;
+            border-radius: 999px;
+            color: white;
+
+            font-size: 16px;
+            font-weight: 700;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e94f83,
+                    #c72f70
+                );
+
+            box-shadow:
+                0 12px 30px rgba(200, 50, 110, 0.28);
+
+            transition: all 0.3s ease;
+        }
+
+        .continue-button:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow:
+                0 18px 38px rgba(200, 50, 110, 0.35);
+        }
+
+        /* =========================================
+           MODALS
+        ========================================= */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+
+            background: rgba(35, 18, 28, 0.58);
+
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            z-index: 1000;
+
+            animation: modalFade 0.25s ease;
+        }
+
+        @keyframes modalFade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-box {
+            width: min(620px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+
+            padding: 40px 30px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.98),
+                    rgba(255,244,248,0.98)
+                );
+
+            box-shadow:
+                0 30px 100px rgba(0, 0, 0, 0.3);
+
+            text-align: center;
+
+            animation: modalPop 0.35s ease;
+        }
+
+        @keyframes modalPop {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .modal-box h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 35px;
+            color: #52293d;
+            margin-bottom: 12px;
+        }
+
+        .modal-box > p {
+            color: #755b66;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+
+            width: 38px;
+            height: 38px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.9);
+            color: #704957;
+
+            font-size: 20px;
+            font-weight: 700;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .modal-wrapper {
+            position: relative;
+            width: min(620px, 100%);
+        }
+
+        /* =========================================
+           PASSWORD
+        ========================================= */
+
+        .password-input {
+            width: min(400px, 100%);
+            padding: 15px 18px;
+
+            border: 2px solid #f0d7e0;
+            border-radius: 15px;
+
+            outline: none;
+
+            font-family: inherit;
+            font-size: 16px;
+
+            text-align: center;
+
+            margin-bottom: 12px;
+        }
+
+        .password-input:focus {
+            border-color: #df6286;
+        }
+
+        .primary-button {
+            padding: 14px 28px;
+            border-radius: 999px;
+
+            background: linear-gradient(135deg, #e94f83, #cf376d);
+            color: white;
+
+            font-weight: 700;
+            font-size: 15px;
+
+            box-shadow: 0 10px 25px rgba(210, 55, 105, 0.25);
+        }
+
+        .hint-button {
+            display: block;
+            margin: 15px auto 0;
+
+            background: none;
+            color: #b04b70;
+
+            text-decoration: underline;
+            font-size: 14px;
+        }
+
+        .hint {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #a14d6a;
+        }
+
+        .error-message {
+            margin-top: 12px;
+            color: #c33f5e;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* =========================================
+           SURPRISE LETTER
+        ========================================= */
+
+        .love-letter {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .love-letter p {
+            color: #674c59;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .love-letter .opening {
+            font-family: "Playfair Display", serif;
+            font-size: 22px;
+            color: #9e3e62;
+        }
+
+        .letter-signature {
+            text-align: right;
+            font-family: "Playfair Display", serif;
+            font-size: 20px;
+            color: #9e3e62;
+            margin-top: 25px;
+        }
+
+        /* =========================================
+           CHOICE BUTTONS
+        ========================================= */
+
+        .choice-list {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .choice-button {
+            width: 100%;
+            padding: 16px 18px;
+
+            border-radius: 16px;
+
+            background: white;
+            color: #633b4b;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            box-shadow: 0 7px 20px rgba(90, 45, 70, 0.1);
+
+            transition: all 0.25s ease;
+
+            border: 2px solid transparent;
+        }
+
+        .choice-button:hover {
+            border-color: #e16a8b;
+            transform: translateY(-2px);
+            color: #a33c61;
+        }
+
+        .selected-response {
+            margin-top: 20px;
+            padding: 18px;
+
+            border-radius: 18px;
+
+            background: #fff1f5;
+            color: #813d58;
+
+            line-height: 1.6;
+
+            font-weight: 600;
+        }
+
+        .back-button {
+            margin-top: 18px;
+            padding: 11px 22px;
+            border-radius: 999px;
+
+            background: #f7e5eb;
+            color: #86425b;
+
+            font-weight: 700;
+        }
+
+        /* =========================================
+           CONTINUE MODAL
+        ========================================= */
+
+        .continue-question {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            color: #52293d;
+            margin: 20px 0;
+        }
+
+        .continue-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            min-height: 90px;
+            flex-wrap: wrap;
+        }
+
+        /* =========================================
+           FINAL PAGE
+        ========================================= */
+
+        .final-modal-box {
+            width: min(760px, 100%);
+        }
+
+        .final-heart {
+            font-size: 55px;
+            margin-bottom: 10px;
+            animation: heartbeat 1.4s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+        }
+
+        .final-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 7vw, 60px);
+            color: #52293d;
+            margin-bottom: 12px;
+        }
+
+        .final-subtitle {
+            font-size: 18px;
+            color: #8b5367;
+            margin-bottom: 30px;
+        }
+
+        .final-choices {
+            display: grid;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .final-choice {
+            padding: 14px 18px;
+            border-radius: 15px;
+            background: #fff3f6;
+            color: #674150;
+            text-align: left;
+        }
+
+        .date-announcement {
+            margin: 30px 0;
+            padding: 28px 20px;
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffe2ec,
+                    #fff0d7
+                );
+
+            box-shadow:
+                inset 0 0 0 1px rgba(255,255,255,0.8);
+        }
+
+        .date-announcement h2 {
+            font-size: clamp(28px, 6vw, 42px);
+            margin-bottom: 10px;
+            color: #9e315d;
+        }
+
+        .date-announcement p {
+            margin: 0;
+            color: #754958;
+        }
+
+        /* =========================================
+           FINAL LETTER
+        ========================================= */
+
+        .final-letter {
+            margin-top: 35px;
+            padding: 35px 28px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,248,250,0.95),
+                    rgba(255,250,239,0.95)
+                );
+
+            border: 1px solid #f4d9e2;
+
+            text-align: left;
+        }
+
+        .final-letter h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 32px;
+            text-align: center;
+            color: #7f304f;
+            margin-bottom: 25px;
+        }
+
+        .final-letter p {
+            color: #654c57;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .final-letter .special-line {
+            text-align: center;
+            font-family: "Playfair Display", serif;
+            font-size: 22px;
+            color: #a43b61;
+            margin: 25px 0;
+        }
+
+        .final-love {
+            text-align: center;
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            color: #a33b61;
+            margin-top: 28px;
+        }
+
+        .final-signature {
+            text-align: right;
+            margin-top: 25px;
+            color: #825064;
+            line-height: 1.7;
+        }
+
+        .final-close {
+            margin-top: 25px;
+        }
+
+        /* =========================================
+           CONFETTI
+        ========================================= */
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 14px;
+            top: -20px;
+            z-index: 3000;
+            pointer-events: none;
+
+            animation:
+                confettiFall 3s linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .options-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .memory-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .landing-card {
+                padding: 45px 22px;
+            }
+
+            .landing-card p {
+                font-size: 16px;
+            }
+
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .memory-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                padding: 5px;
+            }
+
+            .memory-card {
+                height: 200px;
+                border-radius: 15px;
+            }
+
+            .memory-caption {
+                font-size: 11px;
+                padding: 30px 8px 8px;
+            }
+
+            .modal-box {
+                padding: 30px 20px;
+            }
+
+            .final-letter {
+                padding: 25px 18px;
+            }
+
+            .button-row {
+                gap: 12px;
+            }
+
+            .yes-button,
+            .no-button {
+                padding: 13px 28px;
+            }
+        }
+
+    </style>
 </head>
-
 
 <body>
 
+    <!-- =========================================
+         FLOATING HEARTS
+    ========================================= -->
 
-<!-- =======================================================
-     FLOATING HEARTS
-======================================================= -->
-
-<div class="heart" style="left:5%; animation-duration:12s; font-size:22px;">❤️</div>
-<div class="heart" style="left:18%; animation-duration:16s; animation-delay:3s; font-size:18px;">💕</div>
-<div class="heart" style="left:32%; animation-duration:13s; animation-delay:5s; font-size:25px;">💗</div>
-<div class="heart" style="left:50%; animation-duration:18s; animation-delay:1s; font-size:20px;">💖</div>
-<div class="heart" style="left:68%; animation-duration:14s; animation-delay:4s; font-size:25px;">❤️</div>
-<div class="heart" style="left:82%; animation-duration:17s; animation-delay:2s; font-size:20px;">💕</div>
-<div class="heart" style="left:94%; animation-duration:13s; animation-delay:6s; font-size:24px;">💗</div>
+    <div id="heartContainer"></div>
 
 
-<!-- =======================================================
-     LANDING PAGE
-======================================================= -->
+    <!-- =========================================
+         LANDING PAGE
+    ========================================= -->
 
-<section id="landing" class="page">
-
-    <div class="landing-content">
-
-        <div class="small-title">
-            A little something for my favourite person
-        </div>
-
-        <h1 class="main-title">
-            Happy 22nd
-        </h1>
-
-        <p class="main-subtitle">
-            To my Bubu ❤️<br>
-            I made something special for you.
-            But before you open it...
-        </p>
+    <section id="landing" class="page landing">
 
         <div class="landing-card">
+
+            <div class="small-line">
+                A little something for you 💌
+            </div>
+
+            <h1>
+                For My <span>Bubu</span> ❤️
+            </h1>
+
+            <p>
+                I made something special for you.
+                It has a few surprises, a few choices,
+                a lot of memories, and probably way too
+                much love.
+            </p>
 
             <div class="question">
                 Will you accept your present? 🎁
@@ -1000,1359 +1018,1787 @@ button {
             <div class="button-row">
 
                 <button
-                    class="main-button yes-button"
                     id="mainYes"
-                    onclick="acceptPresent()">
+                    class="yes-button"
+                    onclick="acceptPresent()"
+                >
                     YES ❤️
                 </button>
 
                 <button
-                    class="main-button no-button"
                     id="mainNo"
-                    onclick="escapeNo('mainYes','mainNo')">
-                    NO 🙈
+                    class="no-button"
+                    onclick="escapeNo('mainNo')"
+                >
+                    NO 😭
                 </button>
 
             </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     PRESENT / MAIN PAGE
-======================================================= -->
-
-<section id="present" class="page hidden">
-
-    <div class="page-header">
-
-        <div class="small-title">
-            For you, Bubu ❤️
-        </div>
-
-        <h1>Your Little Birthday World</h1>
-
-        <p>
-            Everything here is a tiny piece of how much I love you.
-            Choose whatever you want to open first. 🥹💕
-        </p>
-
-    </div>
-
-
-    <!-- FOUR MAIN OPTIONS -->
-
-    <div class="present-grid">
-
-        <button class="present-card" onclick="openModal('surpriseModal')">
-
-            <div class="present-icon">🎁</div>
-
-            <h3>Surprise</h3>
-
-            <p>
-                There might be something hidden here...
-                if you know the password 👀
-            </p>
-
-        </button>
-
-
-        <button class="present-card" onclick="openModal('giftModal')">
-
-            <div class="present-icon">🎀</div>
-
-            <h3>Gifts</h3>
-
-            <p>
-                A few things I planned especially for you.
-            </p>
-
-        </button>
-
-
-        <button class="present-card" onclick="openModal('foodModal')">
-
-            <div class="present-icon">🌯</div>
-
-            <h3>Food</h3>
-
-            <p>
-                Because every great birthday needs good food.
-            </p>
-
-        </button>
-
-
-        <button class="present-card" onclick="openModal('dateModal')">
-
-            <div class="present-icon">📍</div>
-
-            <h3>Date</h3>
-
-            <p>
-                You get to choose our little adventure.
-            </p>
-
-        </button>
-
-    </div>
-
-
-
-    <!-- ===================================================
-         MEMORY LANE
-    =================================================== -->
-
-    <section class="memory-section">
-
-        <div class="memory-heading">
-
-            <div class="small-title">
-                Our little story
-            </div>
-
-            <h2>Memory Lane 📸❤️</h2>
-
-            <p>
-                22 memories for your 22nd birthday.
-            </p>
-
-        </div>
-
-
-        <div class="memory-grid">
-
-
-            <!-- MEMORY 01 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory01.jpg"
-                    alt="Memory 1">
-
-                <div class="memory-caption">
-                    One of my favourite little moments with you ❤️
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 02 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory02.jpg"
-                    alt="Memory 2">
-
-                <div class="memory-caption">
-                    That smile will always have my heart 🥹❤️
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 03 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory03.jpg"
-                    alt="Memory 3">
-
-                <div class="memory-caption">
-                    Just you being effortlessly beautiful 💕
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 04 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory04.jpg"
-                    alt="Memory 4">
-
-                <div class="memory-caption">
-                    Us being our silly little selves 😂❤️
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 05 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory05.jpg"
-                    alt="Memory 5">
-
-                <div class="memory-caption">
-                    A moment I would happily relive forever 🌸
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 06 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory06.jpg"
-                    alt="Memory 6">
-
-                <div class="memory-caption">
-                    Somehow every picture with you feels special ❤️
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 07 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory07.jpg"
-                    alt="Memory 7">
-
-                <div class="memory-caption">
-                    My favourite person, captured in one frame 🥰
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 08 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory08.jpg"
-                    alt="Memory 8">
-
-                <div class="memory-caption">
-                    A little piece of our story 💗
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 09 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory09.jpg"
-                    alt="Memory 9">
-
-                <div class="memory-caption">
-                    The kind of memory I never want to forget ❤️
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 10 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory10.jpg"
-                    alt="Memory 10">
-
-                <div class="memory-caption">
-                    You make ordinary moments feel extraordinary ✨
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 11 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory11.jpg"
-                    alt="Memory 11">
-
-                <div class="memory-caption">
-                    And then there was this beautiful moment ❤️
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 12 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory12.jpg"
-                    alt="Memory 12">
-
-                <div class="memory-caption">
-                    Just two idiots who somehow found each other 😂❤️
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 13 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory13.jpg"
-                    alt="Memory 13">
-
-                <div class="memory-caption">
-                    That face I could look at forever 🥹💕
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 14 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory14.jpg"
-                    alt="Memory 14">
-
-                <div class="memory-caption">
-                    My favourite kind of peace is being beside you ❤️
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 15 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory15.jpg"
-                    alt="Memory 15">
-
-                <div class="memory-caption">
-                    One picture, a thousand little feelings 💗
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 16 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory16.jpg"
-                    alt="Memory 16">
-
-                <div class="memory-caption">
-                    You + me = my favourite combination 🥰
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 17 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory17.jpg"
-                    alt="Memory 17">
-
-                <div class="memory-caption">
-                    Proof that we can never take a normal picture 😂❤️
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 18 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory18.jpg"
-                    alt="Memory 18">
-
-                <div class="memory-caption">
-                    This is one of those moments I treasure ❤️
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 19 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory19.jpg"
-                    alt="Memory 19">
-
-                <div class="memory-caption">
-                    Still my favourite person to make memories with 💕
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 20 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory20.jpg"
-                    alt="Memory 20">
-
-                <div class="memory-caption">
-                    Every version of us is my favourite version ❤️
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 21 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory21.jpg"
-                    alt="Memory 21">
-
-                <div class="memory-caption">
-                    More memories, more reasons to love you 🥹❤️
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY 22 -->
-
-            <div class="memory-card">
-
-                <img
-                    src="images/memory22.jpg"
-                    alt="Memory 22">
-
-                <div class="memory-caption">
-                    And somehow, I still want a million more memories with you 💖
-                </div>
-
-            </div>
-
 
         </div>
 
     </section>
 
-</section>
 
+    <!-- =========================================
+         PRESENT PAGE
+    ========================================= -->
 
+    <section id="present" class="page present-page hidden">
 
-<!-- =======================================================
-     SURPRISE MODAL
-======================================================= -->
+        <div class="present-header">
 
-<div class="modal" id="surpriseModal">
-
-    <div class="modal-box">
-
-        <button
-            class="close-button"
-            onclick="closeModal('surpriseModal')">
-            ×
-        </button>
-
-
-        <div id="surpriseLock">
-
-            <div class="lock-icon">
-                🔐
+            <div class="eyebrow">
+                Welcome to your little surprise
             </div>
 
-            <h2>A Little Secret</h2>
+            <h2>
+                Pick Your Adventure 💖
+            </h2>
 
-            <p class="modal-description">
-                This surprise is protected by a password.
-                I wonder if you know it... 👀❤️
+            <p>
+                There are four little parts waiting for you.
+                Choose whatever you want and let's see where
+                this little birthday journey takes us. 🥰
             </p>
 
+        </div>
 
-            <div class="password-area">
 
-                <input
-                    type="password"
-                    id="passwordInput"
-                    class="password-input"
-                    placeholder="Enter the password">
+        <!-- =====================================
+             FOUR MAIN OPTIONS
+        ====================================== -->
+
+        <div class="options-grid">
+
+            <!-- SURPRISE -->
+
+            <div class="option-card">
+
+                <div class="option-icon">
+                    🎁
+                </div>
+
+                <h3>
+                    Surprise
+                </h3>
+
+                <p>
+                    There might be something hidden here...
+                    but you'll need the secret password first. 👀
+                </p>
 
                 <button
-                    class="unlock"
-                    onclick="checkPassword()">
-                    Unlock My Surprise 🔓
+                    class="option-button"
+                    onclick="openModal('surpriseModal')"
+                >
+                    Unlock Surprise
                 </button>
 
-                <div
-                    class="wrong-password"
-                    id="wrongPassword">
-                    Hmm... that's not it 😭 Try again, Bubu.
+            </div>
+
+
+            <!-- GIFTS -->
+
+            <div class="option-card">
+
+                <div class="option-icon">
+                    🎀
                 </div>
+
+                <h3>
+                    Gifts
+                </h3>
+
+                <p>
+                    Pick your little birthday gifts and see
+                    what you've chosen.
+                </p>
+
+                <button
+                    class="option-button"
+                    onclick="openModal('giftModal')"
+                >
+                    Choose Gift
+                </button>
+
+            </div>
+
+
+            <!-- FOOD -->
+
+            <div class="option-card">
+
+                <div class="option-icon">
+                    🍕
+                </div>
+
+                <h3>
+                    Food
+                </h3>
+
+                <p>
+                    The most important decision of the entire
+                    website. What are we eating? 😂
+                </p>
+
+                <button
+                    class="option-button"
+                    onclick="openModal('foodModal')"
+                >
+                    Choose Food
+                </button>
+
+            </div>
+
+
+            <!-- DATE -->
+
+            <div class="option-card">
+
+                <div class="option-icon">
+                    💕
+                </div>
+
+                <h3>
+                    Date
+                </h3>
+
+                <p>
+                    Choose the kind of adventure you want
+                    us to have together.
+                </p>
+
+                <button
+                    class="option-button"
+                    onclick="openModal('dateModal')"
+                >
+                    Choose Date
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             MEMORY LANE
+        ====================================== -->
+
+        <section class="memory-section">
+
+            <div class="memory-heading">
+
+                <div class="eyebrow">
+                    A little trip down memory lane
+                </div>
+
+                <h2>
+                    Our Memories ❤️
+                </h2>
+
+                <p>
+                    22 little pieces of us that I never want
+                    to forget.
+                </p>
+
+            </div>
+
+
+            <div class="memory-grid">
+
+
+                <!-- MEMORY 01 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory01.jpg"
+                        alt="Memory 1"
+                    >
+
+                    <div class="memory-caption">
+                        One of my favourite little moments with you ❤️
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 02 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory02.jpg"
+                        alt="Memory 2"
+                    >
+
+                    <div class="memory-caption">
+                        Another memory that makes me smile every time 🥹
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 03 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory03.jpg"
+                        alt="Memory 3"
+                    >
+
+                    <div class="memory-caption">
+                        Just us being us. And honestly, I love that. 💕
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 04 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory04.jpg"
+                        alt="Memory 4"
+                    >
+
+                    <div class="memory-caption">
+                        A moment I would happily relive again and again ❤️
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 05 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory05.jpg"
+                        alt="Memory 5"
+                    >
+
+                    <div class="memory-caption">
+                        You somehow make even ordinary moments special ✨
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 06 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory06.jpg"
+                        alt="Memory 6"
+                    >
+
+                    <div class="memory-caption">
+                        One picture, a thousand feelings. ❤️
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 07 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory07.jpg"
+                        alt="Memory 7"
+                    >
+
+                    <div class="memory-caption">
+                        This one will always have a special place in my heart 💖
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 08 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory08.jpg"
+                        alt="Memory 8"
+                    >
+
+                    <div class="memory-caption">
+                        Look at us. How could I not love this memory? 🥰
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 09 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory09.jpg"
+                        alt="Memory 9"
+                    >
+
+                    <div class="memory-caption">
+                        One of those moments I wish I could freeze forever 💕
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 10 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory10.jpg"
+                        alt="Memory 10"
+                    >
+
+                    <div class="memory-caption">
+                        A tiny snapshot of a very big feeling ❤️
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 11 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory11.jpg"
+                        alt="Memory 11"
+                    >
+
+                    <div class="memory-caption">
+                        You + me + this moment = something I'll always treasure 💗
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 12 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory12.jpg"
+                        alt="Memory 12"
+                    >
+
+                    <div class="memory-caption">
+                        Another page in our little story together 📖❤️
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 13 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory13.jpg"
+                        alt="Memory 13"
+                    >
+
+                    <div class="memory-caption">
+                        Happiness looks a little like this when I'm with you ✨
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 14 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory14.jpg"
+                        alt="Memory 14"
+                    >
+
+                    <div class="memory-caption">
+                        One more reason why I love looking back at us 💕
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 15 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory15.jpg"
+                        alt="Memory 15"
+                    >
+
+                    <div class="memory-caption">
+                        I would choose this moment all over again ❤️
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 16 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory16.jpg"
+                        alt="Memory 16"
+                    >
+
+                    <div class="memory-caption">
+                        Some memories become part of who we are 💖
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 17 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory17.jpg"
+                        alt="Memory 17"
+                    >
+
+                    <div class="memory-caption">
+                        A little moment that means much more than it looks like 🥹
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 18 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory18.jpg"
+                        alt="Memory 18"
+                    >
+
+                    <div class="memory-caption">
+                        And this is another one I never want to forget ❤️
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 19 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory19.jpg"
+                        alt="Memory 19"
+                    >
+
+                    <div class="memory-caption">
+                        Every picture somehow makes me love you a little more 💕
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 20 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory20.jpg"
+                        alt="Memory 20"
+                    >
+
+                    <div class="memory-caption">
+                        Here's to all the beautiful chaos we've shared 😂❤️
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 21 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory21.jpg"
+                        alt="Memory 21"
+                    >
+
+                    <div class="memory-caption">
+                        One more memory before we make a million more ✨
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 22 -->
+
+                <div class="memory-card">
+
+                    <img
+                        src="images/memory22.jpg"
+                        alt="Memory 22"
+                    >
+
+                    <div class="memory-caption">
+                        And somehow, I still want a million more memories with you 💖
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CONTINUE BUTTON
+        ====================================== -->
+
+        <div class="continue-area">
+
+            <button
+                class="continue-button"
+                onclick="openModal('continueModal')"
+            >
+                Continue Our Story ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SURPRISE PASSWORD MODAL
+    ========================================= -->
+
+    <div
+        id="surpriseModal"
+        class="modal hidden"
+        onclick="outsideClose(event, 'surpriseModal')"
+    >
+
+        <div class="modal-wrapper">
+
+            <div class="modal-box">
+
+                <button
+                    class="close-button"
+                    onclick="closeModal('surpriseModal')"
+                >
+                    ×
+                </button>
+
+                <div class="option-icon">
+                    🔐
+                </div>
+
+                <h2>
+                    Secret Surprise
+                </h2>
+
+                <p>
+                    Before you can see this surprise,
+                    you need the secret password. 👀
+                </p>
+
+                <input
+                    id="passwordInput"
+                    class="password-input"
+                    type="password"
+                    placeholder="Enter the secret password"
+                    onkeydown="if(event.key === 'Enter') checkPassword()"
+                >
+
+                <br>
+
+                <button
+                    class="primary-button"
+                    onclick="checkPassword()"
+                >
+                    Unlock ❤️
+                </button>
 
                 <button
                     class="hint-button"
-                    onclick="showHint()">
-                    Need a hint? 👀
+                    onclick="showHint()"
+                >
+                    I need a hint 👀
                 </button>
 
                 <div
-                    class="password-hint"
-                    id="passwordHint">
-                    It's a name we both think about... 👀❤️
+                    id="passwordHint"
+                    class="hint hidden"
+                >
+                    It's a name we both think about... 👀
+                </div>
+
+                <div
+                    id="passwordError"
+                    class="error-message"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         SURPRISE LETTER MODAL
+    ========================================= -->
+
+    <div
+        id="surpriseLetterModal"
+        class="modal hidden"
+        onclick="outsideClose(event, 'surpriseLetterModal')"
+    >
+
+        <div class="modal-wrapper">
+
+            <div class="modal-box">
+
+                <button
+                    class="close-button"
+                    onclick="closeModal('surpriseLetterModal')"
+                >
+                    ×
+                </button>
+
+                <div class="option-icon">
+                    💌
+                </div>
+
+                <h2>
+                    A Little Letter For You
+                </h2>
+
+                <div class="love-letter">
+
+                    <p class="opening">
+                        Maybe it's in a surprise box, but it's no surprise
+                        that I love you more, Bubu. ❤️
+                    </p>
+
+                    <p>
+                        I know this isn't the biggest or fanciest surprise
+                        in the world, but I wanted to make something that
+                        was ours. Something that could hold a few memories,
+                        a few laughs, a few choices, and most importantly,
+                        a little piece of my heart.
+                    </p>
+
+                    <p>
+                        You have become such a special part of my life.
+                        Somehow, all the little things we do together have
+                        become some of my favourite things to remember.
+                    </p>
+
+                    <p>
+                        I love the way we can laugh about the stupidest
+                        things, talk about absolutely nothing, and still
+                        somehow make an ordinary day feel special.
+                    </p>
+
+                    <p>
+                        So this is my tiny way of saying thank you.
+                        Thank you for being you.
+                        Thank you for all the memories.
+                        And thank you for giving me so many reasons to smile.
+                    </p>
+
+                    <p>
+                        I hope this birthday is filled with everything
+                        that makes you happy — and I hope I get to be
+                        beside you for many, many more birthdays.
+                    </p>
+
+                    <div class="letter-signature">
+                        Happy Birthday, Bubu ❤️
+                    </div>
+
+                </div>
+
+                <button
+                    class="back-button"
+                    onclick="closeModal('surpriseLetterModal')"
+                >
+                    Back to surprises 💕
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         GIFTS MODAL
+    ========================================= -->
+
+    <div
+        id="giftModal"
+        class="modal hidden"
+        onclick="outsideClose(event, 'giftModal')"
+    >
+
+        <div class="modal-wrapper">
+
+            <div class="modal-box">
+
+                <button
+                    class="close-button"
+                    onclick="closeModal('giftModal')"
+                >
+                    ×
+                </button>
+
+                <div class="option-icon">
+                    🎀
+                </div>
+
+                <h2>
+                    Choose Your Gift 🎁
+                </h2>
+
+                <p>
+                    You get to choose what kind of birthday
+                    surprise you want. 💕
+                </p>
+
+                <div class="choice-list">
+
+                    <button
+                        class="choice-button"
+                        onclick="chooseGift('Surprise day planned by me ❤️')"
+                    >
+                        🎁 Surprise day planned by me
+                    </button>
+
+                    <button
+                        class="choice-button"
+                        onclick="chooseGift('Favourite food & dessert 🍰')"
+                    >
+                        🍰 Favourite food & dessert
+                    </button>
+
+                    <button
+                        class="choice-button"
+                        onclick="chooseGift('Handwritten letter 💌')"
+                    >
+                        💌 Handwritten letter
+                    </button>
+
+                    <button
+                        class="choice-button"
+                        onclick="chooseGift('One birthday wish ✨')"
+                    >
+                        ✨ One birthday wish
+                    </button>
+
+                </div>
+
+                <div
+                    id="giftResponse"
+                    class="selected-response hidden"
+                ></div>
+
+                <button
+                    id="giftBack"
+                    class="back-button hidden"
+                    onclick="closeModal('giftModal')"
+                >
+                    Back ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         FOOD MODAL
+    ========================================= -->
+
+    <div
+        id="foodModal"
+        class="modal hidden"
+        onclick="outsideClose(event, 'foodModal')"
+    >
+
+        <div class="modal-wrapper">
+
+            <div class="modal-box">
+
+                <button
+                    class="close-button"
+                    onclick="closeModal('foodModal')"
+                >
+                    ×
+                </button>
+
+                <div class="option-icon">
+                    🍕
+                </div>
+
+                <h2>
+                    What Are We Eating? 😂
+                </h2>
+
+                <p>
+                    Choose carefully. This is extremely serious business.
+                </p>
+
+                <div class="choice-list">
+
+                    <button
+                        class="choice-button"
+                        onclick="chooseFood('Chicken Shawarma 🌯')"
+                    >
+                        🌯 Chicken Shawarma
+                    </button>
+
+                    <button
+                        class="choice-button"
+                        onclick="chooseFood('Butter Chicken 🍗')"
+                    >
+                        🍗 Butter Chicken
+                    </button>
+
+                    <button
+                        class="choice-button"
+                        onclick="chooseFood('Sourdough Pizza 🍕')"
+                    >
+                        🍕 Sourdough Pizza
+                    </button>
+
+                    <button
+                        class="choice-button"
+                        onclick="chooseFood('Chinese Food 🥡')"
+                    >
+                        🥡 Chinese Food
+                    </button>
+
+                </div>
+
+                <div
+                    id="foodResponse"
+                    class="selected-response hidden"
+                ></div>
+
+                <button
+                    id="foodBack"
+                    class="back-button hidden"
+                    onclick="closeModal('foodModal')"
+                >
+                    Back ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         DATE MODAL
+    ========================================= -->
+
+    <div
+        id="dateModal"
+        class="modal hidden"
+        onclick="outsideClose(event, 'dateModal')"
+    >
+
+        <div class="modal-wrapper">
+
+            <div class="modal-box">
+
+                <button
+                    class="close-button"
+                    onclick="closeModal('dateModal')"
+                >
+                    ×
+                </button>
+
+                <div class="option-icon">
+                    💕
+                </div>
+
+                <h2>
+                    Pick Our Date 💖
+                </h2>
+
+                <p>
+                    Where are we going on our little adventure?
+                </p>
+
+                <div class="choice-list">
+
+                    <button
+                        class="choice-button"
+                        onclick="chooseDate('Mall Adventure 🛍️')"
+                    >
+                        🛍️ Mall Adventure
+                    </button>
+
+                    <button
+                        class="choice-button"
+                        onclick="chooseDate('Colaba Shopping 🛒')"
+                    >
+                        🛒 Colaba Shopping
+                    </button>
+
+                    <button
+                        class="choice-button"
+                        onclick="chooseDate('Food Hunting 🍜')"
+                    >
+                        🍜 Food Hunting
+                    </button>
+
+                    <button
+                        class="choice-button"
+                        onclick="chooseDate('Netflix & Chill 🎬')"
+                    >
+                        🎬 Netflix & Chill
+                    </button>
+
+                </div>
+
+                <div
+                    id="dateResponse"
+                    class="selected-response hidden"
+                ></div>
+
+                <button
+                    id="dateBack"
+                    class="back-button hidden"
+                    onclick="closeModal('dateModal')"
+                >
+                    Back ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         CONTINUE MODAL
+    ========================================= -->
+
+    <div
+        id="continueModal"
+        class="modal hidden"
+        onclick="outsideClose(event, 'continueModal')"
+    >
+
+        <div class="modal-wrapper">
+
+            <div class="modal-box">
+
+                <button
+                    class="close-button"
+                    onclick="closeModal('continueModal')"
+                >
+                    ×
+                </button>
+
+                <div class="option-icon">
+                    💕
+                </div>
+
+                <h2>
+                    One Last Question...
+                </h2>
+
+                <p>
+                    You've made all your choices.
+                    But are you ready to see what's waiting
+                    at the end? 👀
+                </p>
+
+                <div class="continue-question">
+                    Should we continue? ❤️
+                </div>
+
+                <div class="continue-buttons">
+
+                    <button
+                        id="continueYes"
+                        class="yes-button"
+                        onclick="goFinal()"
+                    >
+                        YES ❤️
+                    </button>
+
+                    <button
+                        id="continueNo"
+                        class="no-button"
+                        onclick="escapeNo('continueNo')"
+                    >
+                        NO 😭
+                    </button>
+
                 </div>
 
             </div>
 
         </div>
 
+    </div>
 
-        <!-- UNLOCKED LETTER -->
 
-        <div id="surpriseUnlocked" style="display:none;">
+    <!-- =========================================
+         FINAL PAGE / FINAL LETTER
+    ========================================= -->
 
-            <div class="lock-icon">
-                🔓
+    <div
+        id="finalModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-wrapper">
+
+            <div class="modal-box final-modal-box">
+
+                <div class="final-heart">
+                    ❤️
+                </div>
+
+                <div class="final-title">
+                    You Made It! 🥹
+                </div>
+
+                <div class="final-subtitle">
+                    And now here's the part I really wanted
+                    you to see...
+                </div>
+
+
+                <!-- =================================
+                     HER CHOICES
+                ================================== -->
+
+                <div class="final-choices">
+
+                    <div class="final-choice">
+                        🎁 <strong>Your Gift:</strong>
+                        <span id="finalGift">
+                            You haven't chosen yet
+                        </span>
+                    </div>
+
+                    <div class="final-choice">
+                        🍕 <strong>Your Food:</strong>
+                        <span id="finalFood">
+                            You haven't chosen yet
+                        </span>
+                    </div>
+
+                    <div class="final-choice">
+                        💕 <strong>Your Date:</strong>
+                        <span id="finalDate">
+                            You haven't chosen yet
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     DATE ANNOUNCEMENT
+                ================================== -->
+
+                <div class="date-announcement">
+
+                    <h2>
+                        BE READY FOR YOUR DATE 💖
+                    </h2>
+
+                    <p>
+                        Because your birthday adventure
+                        is officially waiting for you. 🥰
+                    </p>
+
+                </div>
+
+
+                <!-- =================================
+                     FINAL LOVE LETTER
+                ================================== -->
+
+                <div class="final-letter">
+
+                    <h3>
+                        For My Bubu ❤️
+                    </h3>
+
+                    <p>
+                        Maybe this whole website started as
+                        a little birthday surprise, but there
+                        is one thing that has never been a
+                        surprise to me — how much I love you.
+                    </p>
+
+                    <p>
+                        Bubu, you mean so much more to me than
+                        I could ever properly put into words.
+                        There are so many things I love about
+                        you, so many little moments that I keep
+                        replaying in my head, and so many memories
+                        that I know I will carry with me for a
+                        very, very long time.
+                    </p>
+
+                    <p>
+                        Sometimes I think about how all these
+                        little moments started becoming our
+                        memories. The random conversations,
+                        the stupid jokes, the laughter, the
+                        silly arguments, the food, the outings,
+                        the pictures, and all those tiny moments
+                        that probably seemed ordinary at the
+                        time.
+                    </p>
+
+                    <p>
+                        But when I look back at them now,
+                        I realise that those ordinary moments
+                        were never really ordinary.
+                    </p>
+
+                    <p class="special-line">
+                        They were special because they were
+                        moments I got to spend with you. ❤️
+                    </p>
+
+                    <p>
+                        You have become such a beautiful part
+                        of my life, and I genuinely feel lucky
+                        that I get to make memories with you.
+                        You make me laugh when I don't feel like
+                        laughing, you make normal days feel
+                        exciting, and somehow even doing nothing
+                        with you can become one of my favourite
+                        things.
+                    </p>
+
+                    <p>
+                        I don't know what the future is going
+                        to look like, and I don't know how many
+                        birthdays, dates, trips, meals, photos,
+                        fights, laughs, and random conversations
+                        are waiting for us.
+                    </p>
+
+                    <p>
+                        But I do know one thing.
+                    </p>
+
+                    <p class="special-line">
+                        I want more of them with you. ❤️
+                    </p>
+
+                    <p>
+                        I want more random pictures.
+                        More food dates.
+                        More stupid jokes.
+                        More late conversations.
+                        More adventures.
+                        More moments where we look at each
+                        other and laugh for absolutely no reason.
+                    </p>
+
+                    <p>
+                        I want more memories that we can look
+                        back on years from now and say,
+                        "Remember this?"
+                    </p>
+
+                    <p>
+                        And most importantly, I want you to know
+                        that you are loved.
+                    </p>
+
+                    <p>
+                        Not just today because it's your birthday.
+                        Not just because I made this website.
+                        Not just because I am writing this letter.
+                    </p>
+
+                    <p>
+                        You are loved in all those tiny moments
+                        that you probably don't even notice.
+                    </p>
+
+                    <p>
+                        In the way I remember little things about
+                        you. In the way I smile when I see a
+                        message from you. In the way certain
+                        places, songs, foods, jokes and random
+                        things remind me of you.
+                    </p>
+
+                    <p>
+                        I hope this little surprise made you smile.
+                        I hope you enjoyed choosing everything.
+                        And I hope that when you look at these
+                        22 memories, you remember not just the
+                        pictures, but the feelings behind them.
+                    </p>
+
+                    <p>
+                        Thank you for being part of my life.
+                        Thank you for every memory.
+                        Thank you for every laugh.
+                        Thank you for every little moment.
+                    </p>
+
+                    <p>
+                        And thank you for being my Bubu. ❤️
+                    </p>
+
+                    <p class="special-line">
+                        Here's to you.
+                        Here's to us.
+                        And here's to a million more memories. 💖
+                    </p>
+
+                    <p class="final-love">
+                        Happy Birthday, Bubu. 🎂❤️
+                        <br><br>
+                        I love you more than you know.
+                    </p>
+
+                    <div class="final-signature">
+                        Forever yours,<br>
+                        <strong>Me ❤️</strong>
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="primary-button final-close"
+                    onclick="closeFinal()"
+                >
+                    Back to the memories ❤️
+                </button>
+
             </div>
 
-            <h2>For My Bubu ❤️</h2>
-
-            <div class="letter">
-
-                <p class="opening">
-                    Maybe it's in a surprise box,
-                    but it's no surprise that I love you more, Bubu.
-                </p>
-
-                <p>
-                    Happy Birthday to the person who somehow managed
-                    to become such a huge part of my life. ❤️
-                </p>
-
-                <p>
-                    I don't think I can ever properly explain what
-                    you mean to me. You have become one of those people
-                    who make ordinary days feel a little more special
-                    just by being there.
-                </p>
-
-                <p>
-                    We've laughed over stupid things, made memories
-                    that I never want to forget, annoyed each other,
-                    been complete idiots together, and somehow through
-                    all of it, you've become my favourite person.
-                </p>
-
-                <p>
-                    I love the little things about you.
-                    Your smile. Your expressions.
-                    The way you laugh.
-                    The way you can make me happy without even trying.
-                    Even the things that sometimes drive me crazy.
-                    😂❤️
-                </p>
-
-                <p>
-                    On your 22nd birthday, I just want you to know
-                    that I hope you always remember how loved you are.
-                </p>
-
-                <p>
-                    I hope this year brings you everything you deserve,
-                    and I hope I get to be beside you for as many of
-                    those moments as possible.
-                </p>
-
-                <p>
-                    This website may just be a little birthday surprise,
-                    but every picture, every choice, every little detail
-                    here was made because of one simple reason...
-                </p>
-
-                <p class="opening">
-                    I love you. More than I probably know how to say. ❤️
-                </p>
-
-                <p>
-                    Happy 22nd Birthday, Bubu. 🎂💕
-                </p>
-
-                <p>
-                    Now go back and explore everything else...
-                    because we're not done yet. 👀
-                </p>
-
-            </div>
-
         </div>
 
     </div>
 
-</div>
 
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
 
+    <script>
 
-<!-- =======================================================
-     GIFTS MODAL
-======================================================= -->
+        /* =========================================
+           STORED CHOICES
+        ========================================= */
 
-<div class="modal" id="giftModal">
+        let selectedGift = "";
+        let selectedFood = "";
+        let selectedDate = "";
 
-    <div class="modal-box">
 
-        <button
-            class="close-button"
-            onclick="closeModal('giftModal')">
-            ×
-        </button>
+        /* =========================================
+           ACCEPT PRESENT
+        ========================================= */
 
-        <h2>Your Gifts 🎁</h2>
+        function acceptPresent() {
 
-        <p class="modal-description">
-            Four little things I planned especially for you.
-        </p>
+            const landing = document.getElementById("landing");
+            const present = document.getElementById("present");
 
+            landing.classList.add("hidden");
+            present.classList.remove("hidden");
 
-        <div class="choice-grid">
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-            <button class="choice-button"
-                onclick="chooseGift('Surprise day planned by me')">
-                🌸 Surprise day planned by me
-            </button>
-
-            <button class="choice-button"
-                onclick="chooseGift('Favourite food & dessert')">
-                🍰 Favourite food & dessert
-            </button>
-
-            <button class="choice-button"
-                onclick="chooseGift('Handwritten letter')">
-                💌 Handwritten letter
-            </button>
-
-            <button class="choice-button"
-                onclick="chooseGift('One birthday wish')">
-                ✨ One birthday wish
-            </button>
-
-        </div>
-
-
-        <div
-            class="choice-response"
-            id="giftResponse">
-        </div>
-
-        <button
-            class="back-menu"
-            onclick="closeModal('giftModal')">
-            Back to my presents ❤️
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<!-- =======================================================
-     FOOD MODAL
-======================================================= -->
-
-<div class="modal" id="foodModal">
-
-    <div class="modal-box">
-
-        <button
-            class="close-button"
-            onclick="closeModal('foodModal')">
-            ×
-        </button>
-
-        <h2>What Are We Eating? 🌯</h2>
-
-        <p class="modal-description">
-            Choose your birthday food, Bubu. 😌
-        </p>
-
-
-        <div class="choice-grid">
-
-            <button class="choice-button"
-                onclick="chooseFood('Chicken Shawarma')">
-                🌯 Chicken Shawarma
-            </button>
-
-            <button class="choice-button"
-                onclick="chooseFood('Butter Chicken')">
-                🍗 Butter Chicken
-            </button>
-
-            <button class="choice-button"
-                onclick="chooseFood('Sourdough Pizza')">
-                🍕 Sourdough Pizza
-            </button>
-
-            <button class="choice-button"
-                onclick="chooseFood('Chinese Food')">
-                🥡 Chinese Food
-            </button>
-
-        </div>
-
-
-        <div
-            class="choice-response"
-            id="foodResponse">
-        </div>
-
-        <button
-            class="back-menu"
-            onclick="closeModal('foodModal')">
-            Back to my presents ❤️
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<!-- =======================================================
-     DATE MODAL
-======================================================= -->
-
-<div class="modal" id="dateModal">
-
-    <div class="modal-box">
-
-        <button
-            class="close-button"
-            onclick="closeModal('dateModal')">
-            ×
-        </button>
-
-        <h2>Our Date 📍❤️</h2>
-
-        <p class="modal-description">
-            So... where are you taking me, Bubu? 👀
-        </p>
-
-
-        <div class="choice-grid">
-
-            <button class="choice-button"
-                onclick="chooseDate('Mall Adventure')">
-                🛍️ Mall Adventure
-            </button>
-
-            <button class="choice-button"
-                onclick="chooseDate('Colaba Shopping')">
-                🛒 Colaba Shopping
-            </button>
-
-            <button class="choice-button"
-                onclick="chooseDate('Food Hunting')">
-                🍜 Food Hunting
-            </button>
-
-            <button class="choice-button"
-                onclick="chooseDate('Netflix & Chill')">
-                🎬 Netflix & Chill
-            </button>
-
-        </div>
-
-
-        <div
-            class="choice-response"
-            id="dateResponse">
-        </div>
-
-        <button
-            class="back-menu"
-            onclick="closeModal('dateModal')">
-            Back to my presents ❤️
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<!-- =======================================================
-     CONTINUE QUESTION
-======================================================= -->
-
-<div class="modal" id="continueModal">
-
-    <div class="modal-box">
-
-        <div class="lock-icon">
-            💕
-        </div>
-
-        <h2>One More Thing...</h2>
-
-        <p class="modal-description">
-            Are you ready to continue your birthday adventure? 👀
-        </p>
-
-
-        <div class="button-row">
-
-            <button
-                class="main-button yes-button"
-                id="continueYes"
-                onclick="goFinal()">
-                YES ❤️
-            </button>
-
-            <button
-                class="main-button no-button"
-                id="continueNo"
-                onclick="escapeNo('continueYes','continueNo')">
-                NO 🙈
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =======================================================
-     FINAL PAGE
-======================================================= -->
-
-<section id="final" class="page hidden">
-
-    <div class="final-box">
-
-        <div class="small-title">
-            And that's not even the best part...
-        </div>
-
-        <h1>Happy Birthday, Bubu ❤️</h1>
-
-        <p class="final-message">
-
-            You made your choices...
-            and now there's only one thing left to say.
-
-            <br><br>
-
-            I hope your 22nd year is filled with laughter,
-            happiness, adventures, food, love and all the little
-            things that make you smile.
-
-            <br><br>
-
-            And selfishly, I hope I get to be there for a lot of it.
-
-            <br><br>
-
-            Thank you for being you.
-            Thank you for all the memories.
-            Thank you for all the laughs.
-            And thank you for letting me love you.
-
-            <br><br>
-
-            I can't promise that every day will be perfect,
-            but I can promise that I'll keep trying to make
-            our days together special.
-
-            ❤️
-
-        </p>
-
-
-        <div class="final-choices">
-
-            <p>
-                🎁 <strong>Gift:</strong>
-                <span id="finalGift">Not chosen yet</span>
-            </p>
-
-            <p>
-                🌯 <strong>Food:</strong>
-                <span id="finalFood">Not chosen yet</span>
-            </p>
-
-            <p>
-                📍 <strong>Date:</strong>
-                <span id="finalDate">Not chosen yet</span>
-            </p>
-
-        </div>
-
-
-        <div class="date-ready">
-            BE READY FOR YOUR DATE 💕
-        </div>
-
-
-        <h2>
-            I LOVE YOU, BUBU. ❤️
-        </h2>
-
-
-        <p class="final-message">
-
-            Happy 22nd birthday to my favourite person.
-            Here's to the memories we've already made...
-
-            <br>
-
-            and the million more that are waiting for us. 🥹❤️
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     JAVASCRIPT
-======================================================= -->
-
-<script>
-
-/* =========================================================
-   VARIABLES
-========================================================= */
-
-let selectedGift = "";
-let selectedFood = "";
-let selectedDate = "";
-
-
-/* =========================================================
-   ACCEPT PRESENT
-========================================================= */
-
-function acceptPresent() {
-
-    document.getElementById("landing").classList.add("hidden");
-
-    document.getElementById("present").classList.remove("hidden");
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-    createConfetti();
-}
-
-
-/* =========================================================
-   PLAYFUL NO BUTTON
-========================================================= */
-
-function escapeNo(yesId, noId) {
-
-    const yesButton = document.getElementById(yesId);
-    const noButton = document.getElementById(noId);
-
-    if (!yesButton || !noButton) {
-        return;
-    }
-
-
-    /* Make YES bigger */
-
-    let currentSize =
-        parseFloat(
-            window.getComputedStyle(yesButton).fontSize
-        );
-
-    currentSize += 5;
-
-    yesButton.style.fontSize = currentSize + "px";
-
-    yesButton.style.padding =
-        "18px 38px";
-
-
-    /* Move NO */
-
-    const randomX =
-        Math.floor(Math.random() * 180) - 90;
-
-    const randomY =
-        Math.floor(Math.random() * 100) - 50;
-
-    noButton.style.transform =
-        "translate(" +
-        randomX +
-        "px," +
-        randomY +
-        "px)";
-
-}
-
-
-/* =========================================================
-   OPEN MODAL
-========================================================= */
-
-function openModal(id) {
-
-    const modal = document.getElementById(id);
-
-    if (modal) {
-
-        modal.classList.add("show");
-
-    }
-
-}
-
-
-/* =========================================================
-   CLOSE MODAL
-========================================================= */
-
-function closeModal(id) {
-
-    const modal = document.getElementById(id);
-
-    if (modal) {
-
-        modal.classList.remove("show");
-
-    }
-
-}
-
-
-/* =========================================================
-   PASSWORD
-========================================================= */
-
-function checkPassword() {
-
-    const input =
-        document
-        .getElementById("passwordInput")
-        .value
-        .trim()
-        .toLowerCase();
-
-    const correctPassword = "pranee";
-
-    const wrong =
-        document.getElementById("wrongPassword");
-
-    const unlocked =
-        document.getElementById("surpriseUnlocked");
-
-    const lock =
-        document.getElementById("surpriseLock");
-
-
-    if (input === correctPassword) {
-
-        wrong.style.display = "none";
-
-        lock.style.display = "none";
-
-        unlocked.style.display = "block";
-
-        document
-            .getElementById("passwordInput")
-            .style.display = "none";
-
-        document
-            .querySelector("#surpriseModal .unlock")
-            .style.display = "none";
-
-        document
-            .querySelector("#surpriseModal .hint-button")
-            .style.display = "none";
-
-        createConfetti();
-
-    }
-
-    else {
-
-        wrong.style.display = "block";
-
-        document
-            .getElementById("passwordInput")
-            .value = "";
-
-    }
-
-}
-
-
-/* =========================================================
-   PASSWORD HINT
-========================================================= */
-
-function showHint() {
-
-    document
-        .getElementById("passwordHint")
-        .classList
-        .add("show");
-
-}
-
-
-/* =========================================================
-   GIFT CHOICE
-========================================================= */
-
-function chooseGift(choice) {
-
-    selectedGift = choice;
-
-    const response =
-        document.getElementById("giftResponse");
-
-
-    response.innerHTML =
-        "OH! So you chose <strong>" +
-        choice +
-        "</strong> 🎁❤️<br><br>" +
-        "I KNEW you would pick something cute. " +
-        "Don't worry... I've got you. 🥹💕";
-
-
-    response.classList.add("show");
-
-    document
-        .getElementById("finalGift")
-        .textContent = choice;
-
-}
-
-
-/* =========================================================
-   FOOD CHOICE
-========================================================= */
-
-function chooseFood(choice) {
-
-    selectedFood = choice;
-
-    const response =
-        document.getElementById("foodResponse");
-
-
-    if (choice === "Chicken Shawarma") {
-
-        response.innerHTML =
-            "OH! So you have chosen your favourite. 🌯😂❤️" +
-            "<br><br>" +
-            "I KNEW IT. Of course my Bubu was going to choose Shawarma. 😭💕";
-
-    }
-
-    else {
-
-        response.innerHTML =
-            "OH! So you have chosen <strong>" +
-            choice +
-            "</strong> 😌🍴❤️" +
-            "<br><br>" +
-            "Birthday food has officially been decided! 😂";
-
-    }
-
-
-    response.classList.add("show");
-
-    document
-        .getElementById("finalFood")
-        .textContent = choice;
-
-}
-
-
-/* =========================================================
-   DATE CHOICE
-========================================================= */
-
-function chooseDate(choice) {
-
-    selectedDate = choice;
-
-    const response =
-        document.getElementById("dateResponse");
-
-
-    response.innerHTML =
-        "OH! So you have chosen <strong>" +
-        choice +
-        "</strong> 📍❤️" +
-        "<br><br>" +
-        "Okay then... it's officially a date. 😌💕" +
-        "<br>" +
-        "You better be ready because I'm planning something special. 👀";
-
-
-    response.classList.add("show");
-
-    document
-        .getElementById("finalDate")
-        .textContent = choice;
-
-}
-
-
-/* =========================================================
-   FINAL PAGE
-========================================================= */
-
-function goFinal() {
-
-    closeModal("continueModal");
-
-    document
-        .getElementById("present")
-        .classList
-        .add("hidden");
-
-    document
-        .getElementById("final")
-        .classList
-        .remove("hidden");
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-    createConfetti();
-
-    setTimeout(createConfetti, 700);
-
-    setTimeout(createConfetti, 1400);
-
-}
-
-
-/* =========================================================
-   CONFETTI
-========================================================= */
-
-function createConfetti() {
-
-    const symbols = [
-        "❤️",
-        "💕",
-        "💖",
-        "💗",
-        "✨",
-        "🎀",
-        "🌸",
-        "💫"
-    ];
-
-
-    for (let i = 0; i < 35; i++) {
-
-        const confetti =
-            document.createElement("div");
-
-        confetti.className = "confetti";
-
-        confetti.textContent =
-            symbols[
-                Math.floor(
-                    Math.random() *
-                    symbols.length
-                )
-            ];
-
-
-        confetti.style.left =
-            Math.random() * 100 + "vw";
-
-
-        confetti.style.fontSize =
-            (12 + Math.random() * 14) + "px";
-
-
-        confetti.style.animationDuration =
-            (2 + Math.random() * 2) + "s";
-
-
-        confetti.style.animationDelay =
-            (Math.random() * 0.5) + "s";
-
-
-        document.body.appendChild(confetti);
-
-
-        setTimeout(function() {
-
-            confetti.remove();
-
-        }, 4500);
-
-    }
-
-}
-
-
-/* =========================================================
-   CLICK OUTSIDE MODAL TO CLOSE
-========================================================= */
-
-document.querySelectorAll(".modal").forEach(function(modal) {
-
-    modal.addEventListener("click", function(event) {
-
-        if (event.target === modal) {
-
-            modal.classList.remove("show");
-
+            createConfetti();
         }
 
-    });
 
-});
+        /* =========================================
+           ESCAPING NO BUTTON
+        ========================================= */
+
+        function escapeNo(buttonId) {
+
+            const button = document.getElementById(buttonId);
+
+            if (!button) {
+                return;
+            }
+
+            const parent = button.parentElement;
+
+            const maxX = Math.max(
+                0,
+                parent.clientWidth - button.offsetWidth - 10
+            );
+
+            const randomX =
+                Math.floor(
+                    Math.random() * Math.max(maxX, 1)
+                ) - (maxX / 2);
+
+            const randomY =
+                Math.floor(
+                    Math.random() * 80
+                ) - 40;
+
+            button.style.transform =
+                `translate(${randomX}px, ${randomY}px)`;
+
+            const yesButton =
+                buttonId === "mainNo"
+                    ? document.getElementById("mainYes")
+                    : document.getElementById("continueYes");
+
+            if (yesButton) {
+
+                const currentScale =
+                    parseFloat(
+                        yesButton.dataset.scale || "1"
+                    );
+
+                const newScale =
+                    Math.min(currentScale + 0.12, 1.8);
+
+                yesButton.dataset.scale = newScale;
+
+                yesButton.style.transform =
+                    `scale(${newScale})`;
+            }
+        }
 
 
-</script>
+        /* =========================================
+           OPEN MODAL
+        ========================================= */
+
+        function openModal(id) {
+
+            const modal =
+                document.getElementById(id);
+
+            if (!modal) {
+                return;
+            }
+
+            modal.classList.remove("hidden");
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        /* =========================================
+           CLOSE MODAL
+        ========================================= */
+
+        function closeModal(id) {
+
+            const modal =
+                document.getElementById(id);
+
+            if (!modal) {
+                return;
+            }
+
+            modal.classList.add("hidden");
+
+            document.body.style.overflow = "";
+        }
+
+
+        /* =========================================
+           CLOSE WHEN CLICKING OUTSIDE
+        ========================================= */
+
+        function outsideClose(event, id) {
+
+            if (event.target.id === id) {
+                closeModal(id);
+            }
+        }
+
+
+        /* =========================================
+           PASSWORD
+        ========================================= */
+
+        function checkPassword() {
+
+            const input =
+                document.getElementById("passwordInput");
+
+            const error =
+                document.getElementById("passwordError");
+
+            const password =
+                input.value.trim().toLowerCase();
+
+            if (password === "pranee") {
+
+                error.textContent = "";
+
+                closeModal("surpriseModal");
+
+                input.value = "";
+
+                openModal("surpriseLetterModal");
+
+                createConfetti();
+
+            } else {
+
+                error.textContent =
+                    "Hmm... that's not it 😭 Try again, Bubu!";
+            }
+        }
+
+
+        /* =========================================
+           PASSWORD HINT
+        ========================================= */
+
+        function showHint() {
+
+            const hint =
+                document.getElementById("passwordHint");
+
+            hint.classList.remove("hidden");
+        }
+
+
+        /* =========================================
+           CHOOSE GIFT
+        ========================================= */
+
+        function chooseGift(choice) {
+
+            selectedGift = choice;
+
+            const response =
+                document.getElementById("giftResponse");
+
+            response.innerHTML =
+                "OH! So you have chosen <strong>" +
+                choice +
+                "</strong> 🎁❤️<br><br>" +
+                "Good choice, Bubu. I knew you'd pick something cute. 😂";
+
+            response.classList.remove("hidden");
+
+            document
+                .getElementById("giftBack")
+                .classList.remove("hidden");
+        }
+
+
+        /* =========================================
+           CHOOSE FOOD
+        ========================================= */
+
+        function chooseFood(choice) {
+
+            selectedFood = choice;
+
+            const response =
+                document.getElementById("foodResponse");
+
+            if (choice.includes("Chicken Shawarma")) {
+
+                response.innerHTML =
+                    "OH! So you have chosen your favourite. 🌯😂<br><br>" +
+                    "I KNEW IT. There was absolutely no chance you were choosing anything else. ❤️";
+
+            } else {
+
+                response.innerHTML =
+                    "OH! So you have chosen <strong>" +
+                    choice +
+                    "</strong> 🍽️❤️<br><br>" +
+                    "Okay okay... I'll allow it. 😂";
+
+            }
+
+            response.classList.remove("hidden");
+
+            document
+                .getElementById("foodBack")
+                .classList.remove("hidden");
+        }
+
+
+        /* =========================================
+           CHOOSE DATE
+        ========================================= */
+
+        function chooseDate(choice) {
+
+            selectedDate = choice;
+
+            const response =
+                document.getElementById("dateResponse");
+
+            response.innerHTML =
+                "Ohhh, so you've chosen <strong>" +
+                choice +
+                "</strong> 💕<br><br>" +
+                "Alright Bubu... it's officially going on our date list. 🥰";
+
+            response.classList.remove("hidden");
+
+            document
+                .getElementById("dateBack")
+                .classList.remove("hidden");
+        }
+
+
+        /* =========================================
+           GO TO FINAL PAGE
+        ========================================= */
+
+        function goFinal() {
+
+            closeModal("continueModal");
+
+            document.getElementById("finalGift").textContent =
+                selectedGift ||
+                "You forgot to choose this one 😂";
+
+            document.getElementById("finalFood").textContent =
+                selectedFood ||
+                "You forgot to choose this one 😂";
+
+            document.getElementById("finalDate").textContent =
+                selectedDate ||
+                "You forgot to choose this one 😂";
+
+            openModal("finalModal");
+
+            createConfetti();
+
+            setTimeout(function() {
+                createConfetti();
+            }, 700);
+
+            setTimeout(function() {
+                createConfetti();
+            }, 1400);
+        }
+
+
+        /* =========================================
+           CLOSE FINAL PAGE
+        ========================================= */
+
+        function closeFinal() {
+
+            document
+                .getElementById("finalModal")
+                .classList.add("hidden");
+
+            document.body.style.overflow = "";
+
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth"
+            });
+        }
+
+
+        /* =========================================
+           CONFETTI
+        ========================================= */
+
+        function createConfetti() {
+
+            const symbols = [
+                "❤️",
+                "💕",
+                "💖",
+                "✨",
+                "🎉",
+                "🎀",
+                "💗"
+            ];
+
+            for (let i = 0; i < 45; i++) {
+
+                const confetti =
+                    document.createElement("div");
+
+                confetti.className = "confetti";
+
+                confetti.textContent =
+                    symbols[
+                        Math.floor(
+                            Math.random() *
+                            symbols.length
+                        )
+                    ];
+
+                confetti.style.left =
+                    Math.random() * 100 + "vw";
+
+                confetti.style.fontSize =
+                    (12 + Math.random() * 12) + "px";
+
+                confetti.style.animationDuration =
+                    (2 + Math.random() * 2) + "s";
+
+                confetti.style.animationDelay =
+                    Math.random() * 0.5 + "s";
+
+                document.body.appendChild(confetti);
+
+                setTimeout(function() {
+
+                    confetti.remove();
+
+                }, 4500);
+            }
+        }
+
+
+        /* =========================================
+           FLOATING HEARTS
+        ========================================= */
+
+        function createFloatingHeart() {
+
+            const container =
+                document.getElementById("heartContainer");
+
+            if (!container) {
+                return;
+            }
+
+            const heart =
+                document.createElement("div");
+
+            heart.className = "heart";
+
+            const hearts = [
+                "❤️",
+                "💕",
+                "💗",
+                "💖",
+                "✨"
+            ];
+
+            heart.textContent =
+                hearts[
+                    Math.floor(
+                        Math.random() *
+                        hearts.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                (12 + Math.random() * 18) + "px";
+
+            heart.style.animationDuration =
+                (6 + Math.random() * 6) + "s";
+
+            container.appendChild(heart);
+
+            setTimeout(function() {
+                heart.remove();
+            }, 13000);
+        }
+
+
+        setInterval(
+            createFloatingHeart,
+            1200
+        );
+
+
+        /* =========================================
+           INITIAL HEARTS
+        ========================================= */
+
+        for (let i = 0; i < 8; i++) {
+
+            setTimeout(
+                createFloatingHeart,
+                i * 400
+            );
+        }
+
+
+        /* =========================================
+           ESC KEY CLOSES NORMAL MODALS
+        ========================================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key !== "Escape") {
+                    return;
+                }
+
+                const modals =
+                    document.querySelectorAll(".modal");
+
+                modals.forEach(function(modal) {
+
+                    if (
+                        !modal.classList.contains("hidden") &&
+                        modal.id !== "finalModal"
+                    ) {
+
+                        modal.classList.add("hidden");
+
+                    }
+
+                });
+
+                document.body.style.overflow = "";
+            }
+        );
+
+    </script>
 
 </body>
 </html>
