@@ -416,110 +416,82 @@ h1,h2,h3{
    MEMORY LANE
 ========================================================= */
 
-/* =========================
-   MEMORY LANE — ALL 22 PHOTOS
-   ========================= */
-
 .memory-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 35px auto;
+    gap: 16px;
+    max-width: 1000px;
+    margin: 30px auto;
     padding: 10px;
 }
 
 .memory-card {
     position: relative;
-    width: 100%;
-    height: 330px;
-    border-radius: 22px;
+    height: 230px;
+    border-radius: 18px;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-    transition: all 0.35s ease;
-    cursor: pointer;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* EVERY photo gets exactly the same treatment */
+.memory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
 .memory-card img {
-    display: block;
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
     object-position: center;
-    border-radius: 22px;
-    transition: transform 0.5s ease;
 }
 
-/* Cute zoom when she hovers */
-.memory-card:hover {
-    transform: translateY(-8px) rotate(0.5deg);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
-}
-
-.memory-card:hover img {
-    transform: scale(1.07);
-}
-
-/* Caption */
 .memory-caption {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 35px 15px 15px;
+    padding: 35px 12px 12px;
     color: white;
-    font-size: 15px;
-    line-height: 1.4;
     text-align: center;
+    font-size: 13px;
+    line-height: 1.3;
     background: linear-gradient(
         transparent,
-        rgba(0, 0, 0, 0.78)
+        rgba(0, 0, 0, 0.75)
     );
-    opacity: 0;
-    transition: opacity 0.35s ease;
-}
-
-.memory-card:hover .memory-caption {
-    opacity: 1;
 }
 
 
-/* =========================
-   TABLET
-   ========================= */
+/* TABLET */
 
 @media (max-width: 900px) {
     .memory-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .memory-card {
-        height: 300px;
+        height: 220px;
     }
 }
 
 
-/* =========================
-   MOBILE
-   ========================= */
+/* MOBILE */
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
     .memory-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 5px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
     .memory-card {
-        height: 380px;
+        height: 200px;
     }
 
     .memory-caption {
-        opacity: 1;
+        font-size: 11px;
     }
 }
 
@@ -1518,199 +1490,145 @@ that remind me why I love you.
 
 <div class="memory-grid">
 
-    <div class="memory">
-        <div class="memory-photo">
-            <img src="memory01.jpg" alt="Memory 01">
-        </div>
-        <div class="memory-info">
-            <div class="memory-number">MEMORY 01</div>
-            <div class="memory-text">The beginning of something beautiful. ❤️</div>
-        </div>
+    <!-- MEMORY 01 -->
+    <div class="memory-card">
+        <img src="images/memory01.jpg" alt="Memory 1">
+        <div class="memory-caption">One of my favourite little moments with you ❤️</div>
     </div>
 
-    <div class="memory">
-        <div class="memory-photo">
-            <img src="memory02.jpg" alt="Memory 02">
-        </div>
-        <div class="memory-info">
-            <div class="memory-number">MEMORY 02</div>
-            <div class="memory-text">That smile I could never get enough of. 💕</div>
-        </div>
+    <!-- MEMORY 02 -->
+    <div class="memory-card">
+        <img src="images/memory02.jpg" alt="Memory 2">
+        <div class="memory-caption">That smile will always have my heart 🥹❤️</div>
     </div>
 
-    <div class="memory">
-        <div class="memory-photo">
-            <img src="memory03.jpg" alt="Memory 03">
-        </div>
-        <div class="memory-info">
-            <div class="memory-number">MEMORY 03</div>
-            <div class="memory-text">One of my favourite days with you. 🌸</div>
-        </div>
+    <!-- MEMORY 03 -->
+    <div class="memory-card">
+        <img src="images/memory03.jpg" alt="Memory 3">
+        <div class="memory-caption">Just you being effortlessly beautiful 💕</div>
     </div>
 
-    <div class="memory">
-        <div class="memory-photo">
-            <img src="memory04.jpg" alt="Memory 04">
-        </div>
-        <div class="memory-info">
-            <div class="memory-number">MEMORY 04</div>
-            <div class="memory-text">You being effortlessly adorable. 🥹</div>
-        </div>
+    <!-- MEMORY 04 -->
+    <div class="memory-card">
+        <img src="images/memory04.jpg" alt="Memory 4">
+        <div class="memory-caption">Us being our silly little selves 😂❤️</div>
     </div>
 
-    <div class="memory">
-        <div class="memory-photo">
-            <img src="memory05.jpg" alt="Memory 05">
-        </div>
-        <div class="memory-info">
-            <div class="memory-number">MEMORY 05</div>
-            <div class="memory-text">A moment I wish I could replay. ❤️</div>
-        </div>
+    <!-- MEMORY 05 -->
+    <div class="memory-card">
+        <img src="images/memory05.jpg" alt="Memory 5">
+        <div class="memory-caption">A moment I would happily relive forever 🌸</div>
     </div>
 
-    <div class="memory">
-        <div class="memory-photo">
-            <img src="memory06.jpg" alt="Memory 06">
-        </div>
-        <div class="memory-info">
-            <div class="memory-number">MEMORY 06</div>
-            <div class="memory-text">Us being complete idiots together. 😂</div>
-        </div>
+    <!-- MEMORY 06 -->
+    <div class="memory-card">
+        <img src="images/memory06.jpg" alt="Memory 6">
+        <div class="memory-caption">Somehow every picture with you feels special ❤️</div>
     </div>
 
-    <div class="memory">
-        <div class="memory-photo">
-            <img src="memory07.jpg" alt="Memory 07">
-        </div>
-        <div class="memory-info">
-            <div class="memory-number">MEMORY 07</div>
-            <div class="memory-text">A memory I'll always keep close. 💗</div>
-        </div>
+    <!-- MEMORY 07 -->
+    <div class="memory-card">
+        <img src="images/memory07.jpg" alt="Memory 7">
+        <div class="memory-caption">My favourite person, captured in one frame 🥰</div>
     </div>
 
-    <div class="memory">
-        <div class="memory-photo">
-            <img src="memory08.jpg" alt="Memory 08">
-        </div>
-        <div class="memory-info">
-            <div class="memory-number">MEMORY 08</div>
-            <div class="memory-text">You made this day unforgettable. ✨</div>
-        </div>
+    <!-- MEMORY 08 -->
+    <div class="memory-card">
+        <img src="images/memory08.jpg" alt="Memory 8">
+        <div class="memory-caption">A little piece of our story 💗</div>
     </div>
 
-    <div class="memory">
-        <div class="memory-photo">
-            <img src="memory09.jpg" alt="Memory 09">
-        </div>
-        <div class="memory-info">
-            <div class="memory-number">MEMORY 09</div>
-            <div class="memory-text">Just you being you. 🥰</div>
-        </div>
+    <!-- MEMORY 09 -->
+    <div class="memory-card">
+        <img src="images/memory09.jpg" alt="Memory 9">
+        <div class="memory-caption">The kind of memory I never want to forget ❤️</div>
     </div>
 
-    <div class="memory">
-        <div class="memory-photo">
-            <img src="memory10.jpg" alt="Memory 10">
-        </div>
-        <div class="memory-info">
-            <div class="memory-number">MEMORY 10</div>
-            <div class="memory-text">Another reason I fell for you. 🌷</div>
-        </div>
+    <!-- MEMORY 10 -->
+    <div class="memory-card">
+        <img src="images/memory10.jpg" alt="Memory 10">
+        <div class="memory-caption">You make ordinary moments feel extraordinary ✨</div>
     </div>
 
-    <div class="memory">
-        <div class="memory-photo">
-            <img src="memory11.jpg" alt="Memory 11">
-        </div>
-        <div class="memory-info">
-            <div class="memory-number">MEMORY 11</div>
-            <div class="memory-text">And somehow, I love you even more. ❤️</div>
-        </div>
+    <!-- MEMORY 11 -->
+    <div class="memory-card">
+        <img src="images/memory11.jpg" alt="Memory 11">
+        <div class="memory-caption">And then there was this beautiful moment ❤️</div>
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- NEW 11 PHOTOS -->
+    <!-- ========================= -->
+
+    <!-- MEMORY 12 -->
+    <div class="memory-card">
+        <img src="images/memory12.jpg" alt="Memory 12">
+        <div class="memory-caption">Just two idiots who somehow found each other 😂❤️</div>
+    </div>
+
+    <!-- MEMORY 13 -->
+    <div class="memory-card">
+        <img src="images/memory13.jpg" alt="Memory 13">
+        <div class="memory-caption">That face I could look at forever 🥹💕</div>
+    </div>
+
+    <!-- MEMORY 14 -->
+    <div class="memory-card">
+        <img src="images/memory14.jpg" alt="Memory 14">
+        <div class="memory-caption">My favourite kind of peace is being beside you ❤️</div>
+    </div>
+
+    <!-- MEMORY 15 -->
+    <div class="memory-card">
+        <img src="images/memory15.jpg" alt="Memory 15">
+        <div class="memory-caption">One picture, a thousand little feelings 💗</div>
+    </div>
+
+    <!-- MEMORY 16 -->
+    <div class="memory-card">
+        <img src="images/memory16.jpg" alt="Memory 16">
+        <div class="memory-caption">You + me = my favourite combination 🥰</div>
+    </div>
+
+    <!-- MEMORY 17 -->
+    <div class="memory-card">
+        <img src="images/memory17.jpg" alt="Memory 17">
+        <div class="memory-caption">Proof that we can never take a normal picture 😂❤️</div>
+    </div>
+
+    <!-- MEMORY 18 -->
+    <div class="memory-card">
+        <img src="images/memory18.jpg" alt="Memory 18">
+        <div class="memory-caption">This is one of those moments I treasure ❤️</div>
+    </div>
+
+    <!-- MEMORY 19 -->
+    <div class="memory-card">
+        <img src="images/memory19.jpg" alt="Memory 19">
+        <div class="memory-caption">Still my favourite person to make memories with 💕</div>
+    </div>
+
+    <!-- MEMORY 20 -->
+    <div class="memory-card">
+        <img src="images/memory20.jpg" alt="Memory 20">
+        <div class="memory-caption">Every version of us is my favourite version ❤️</div>
+    </div>
+
+    <!-- MEMORY 21 -->
+    <div class="memory-card">
+        <img src="images/memory21.jpg" alt="Memory 21">
+        <div class="memory-caption">More memories, more reasons to love you 🥹❤️</div>
+    </div>
+
+    <!-- MEMORY 22 -->
+    <div class="memory-card">
+        <img src="images/memory22.jpg" alt="Memory 22">
+        <div class="memory-caption">And somehow, I still want a million more memories with you 💖</div>
     </div>
 
 </div>
-
-
-<div class="memory-card">
-    <img src="images/memory12.jpg" alt="Memory 12" class="memory-photo">
-    <div class="memory-caption">
-        Just two idiots being cute together. ❤️
-    </div>
-</div>
-
-<div class="memory-card">
-    <img src="images/memory13.jpg" alt="Memory 13" class="memory-photo">
-    <div class="memory-caption">
-        That smile deserves its own place in my heart. 🥹❤️
-    </div>
-</div>
-
-<div class="memory-card">
-    <img src="images/memory14.jpg" alt="Memory 14" class="memory-photo">
-    <div class="memory-caption">
-        My favourite little passenger. 🚆💕
-    </div>
-</div>
-
-<div class="memory-card">
-    <img src="images/memory15.jpg" alt="Memory 15" class="memory-photo">
-    <div class="memory-caption">
-        Somehow, even the random moments become my favourites with you. 🤍
-    </div>
-</div>
-
-<div class="memory-card">
-    <img src="images/memory16.jpg" alt="Memory 16" class="memory-photo">
-    <div class="memory-caption">
-        You + me + absolutely no normal behaviour. 😂❤️
-    </div>
-</div>
-
-<div class="memory-card">
-    <img src="images/memory17.jpg" alt="Memory 17" class="memory-photo">
-    <div class="memory-caption">
-        I could look at this face forever. 🫶
-    </div>
-</div>
-
-<div class="memory-card">
-    <img src="images/memory18.jpg" alt="Memory 18" class="memory-photo">
-    <div class="memory-caption">
-        One of those nights I wish I could replay forever. ✨❤️
-    </div>
-</div>
-
-<div class="memory-card">
-    <img src="images/memory19.jpg" alt="Memory 19" class="memory-photo">
-    <div class="memory-caption">
-        Somehow you make every ordinary place feel special. 💕
-    </div>
-</div>
-
-<div class="memory-card">
-    <img src="images/memory20.jpg" alt="Memory 20" class="memory-photo">
-    <div class="memory-caption">
-        Us. Exactly the way I like us. ❤️
-    </div>
-</div>
-
-<div class="memory-card">
-    <img src="images/memory21.jpg" alt="Memory 21" class="memory-photo">
-    <div class="memory-caption">
-        Okay, this picture is just ridiculously cute. 🥹💕
-    </div>
-</div>
-
-<div class="memory-card">
-    <img src="images/memory22.jpg" alt="Memory 22" class="memory-photo">
-    <div class="memory-caption">
-        And somehow, after all these memories, I still want a million more with you. ❤️✨
-    </div>
-</div>
-
-
-</div>
-
+   </div>
 </section>
 
 
